@@ -11,6 +11,7 @@ gem 'faker', '~> 1.8.4'
 gem 'will_paginate', '~> 3.1.0'
 gem 'semantic-ui-sass'
 gem 'jquery-rails'
+gem 'devise'
 
 group :development, :test do
   gem 'pry'
