@@ -10,20 +10,33 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = current_user.trips.create(trip_params)
+    @trip = Trip.new
   end
 
   def create
+    @trip = current_user.trips.create(trip_params)
+    if @trip.save
+      redirect_to trips_path
+    else
+      render 'new'
+    end
   end
 
   def edit
   end
 
   def update
-  end 
+    if @trip.update
+      redirect_to trip_path(@trip)
+    else
+      render 'edit'
+    end
+  end
 
   def destroy
-  end 
+    @trip.destroy
+    redirect_to trips_path
+  end
 
   private
 
@@ -33,6 +46,6 @@ class TripsController < ApplicationController
 
   def trip_params
     params.require(:trip).permit(:name, :date_start, :date_end)
-  end 
+  end
 
 end
