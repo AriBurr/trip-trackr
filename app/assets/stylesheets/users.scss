@@ -3,14 +3,25 @@
   background-size: cover;
   color: white;
   height: 100%;
-  letter-spacing: 5px;
   max-width: 100%;
   padding: 18%;
     h1 {
-      background-color: rgba(26, 29, 30, .5);
       border-radius: 5px;
       color: inherit;
       font-size: 4em;
-      letter-spacing: inherit;
     }
   }
+
+#sign-up-form {
+  background-color: rgba(26, 29, 30, .75);
+  padding: 5%;
+}
+
+#login-form {
+  background-color: #edf1f4;
+  box-shadow: 0 10px 6px -6px #777;
+  margin: 0 auto;
+  margin-top: 10%;
+  padding: 5%;
+  width: 50%;
+}
