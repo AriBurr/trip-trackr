@@ -6,11 +6,13 @@
       <p><em>Start planning your travel today.</em></p>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "ui form"}) do |f| %>
         <%= devise_error_messages! %>
-        <div class="field">
-          <%= f.text_field :first_name, autofocus: true, placeholder: 'First Name' %>
-        </div>
-        <div class="field">
-          <%= f.text_field :last_name, placeholder: 'Last Name' %>
+        <div class="fields">
+          <div class="field">
+            <%= f.text_field :first_name, autofocus: true, placeholder: 'First Name' %>
+          </div>
+          <div class="field">
+            <%= f.text_field :last_name, placeholder: 'Last Name' %>
+          </div>
         </div>
         <div class="field">
           <%= f.email_field :email, placeholder: 'Email' %>

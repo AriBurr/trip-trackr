@@ -1,11 +1,32 @@
-<h1>All Trips</h1>
+<header id="welcome">
+  <h1>Welcome back,&ensp;<%= current_user.first_name %></h1>
+</header>
 
-<%= link_to 'Add a Trip', new_trip_path %>
+<h2>Your trips&ensp;<%= link_to 'Add a Trip', new_trip_path, class: 'ui small teal button' %></h2>
 
-<div class="ui divider"></div>
+<div class="ui divider hidden"></div>
 
-<ul>
-  <% @trips.each do |trip| %>
-    <li><%= link_to trip.name, trip_path(trip.id) %></li>
-  <% end %>
-</ul>
+<div class="ui grid">
+    <div class "sixteen wide computer column">
+      <div class="ui cards">
+        <% @trips.each do |trip| %>
+          <div class="card">
+            <div class="image">
+              <%= image_tag "default-trip.jpg"%>
+            </div>
+            <div class="content">
+              <div class="header">
+                <%= link_to trip.name, trip_path(trip.id), class: 'header' %>
+              </div>
+              <div class="ui center aligned">
+                  <em><%= trip.display_date_range %></em>
+              </div>
+            </div>
+            <div class="extra content">
+              <%= link_to 'Preview', trip_path(trip.id), class: 'ui orange button' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
