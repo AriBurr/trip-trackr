@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # == Schema Information
 #
 # Table name: addresses
@@ -22,7 +20,6 @@
 #  fk_rails_...  (location_id => locations.id)
 #
 
->>>>>>> init commit
 class Address < ApplicationRecord
   belongs_to :location
 end

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # == Schema Information
 #
 # Table name: locations
@@ -19,7 +17,6 @@
 #  fk_rails_...  (trip_id => trips.id)
 #
 
->>>>>>> init commit
 class Location < ApplicationRecord
   belongs_to :trip, optional: true
   has_one :address, dependent: :destroy
