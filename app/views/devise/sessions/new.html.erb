@@ -1,20 +1,22 @@
-<div class="ui grid">
-  <div class="sixteen wide column center aligned">
-    <div id="login-form">
-      <h2>Login</h2>
-      <p><em>Login to access your plan from any device.</em></p>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "ui form"}) do |f| %>
-        <div class="field">
-          <%= f.email_field :email, autofocus: true, placeholder: 'Email' %>
-        </div>
-        <div class="field">
-          <%= f.password_field :password, autocomplete: "off", placeholder: 'Password' %>
-        </div>
-        <div class="actions">
-          <%= f.submit "Log in", class: 'ui orange button' %>
-          <%= link_to 'Sign-up', new_user_registration_path, class: 'ui teal button' %>
-        </div>
-      <% end %>
+<div id="login-image">
+  <div class="ui grid">
+    <div class="sixteen wide column center aligned">
+      <div id="login-form">
+        <h2>Login</h2>
+        <p><em>Login to access your plan from any device.</em></p>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "ui form"}) do |f| %>
+          <div class="field">
+            <%= f.email_field :email, autofocus: true, placeholder: 'Email' %>
+          </div>
+          <div class="field">
+            <%= f.password_field :password, autocomplete: "off", placeholder: 'Password' %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Login", class: 'ui orange button' %>
+            <%= link_to 'Sign up', new_user_registration_path, class: 'ui teal button' %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
