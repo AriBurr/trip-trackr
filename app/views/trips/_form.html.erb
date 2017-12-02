@@ -1,0 +1,36 @@
+<h1><%= @trip.id? ? 'Edit' : 'Create' %></h1>
+<div class="ui divider"></div>
+
+<%= form_for @trip, class: 'ui form' do |f| %>
+
+  <div class="field">
+    <p><strong><%= f.label :name %></strong></p>
+    <%= f.text_field :name, required: true %>
+  </div>
+
+  <div class="ui hidden divider"></div>
+
+  <div class="field">
+    <p><strong><%= f.label :date_start %></strong></p>
+    <%= f.text_field :date_start, required: true %>
+  </div>
+  <div class="field">
+    <div class="ui hidden divider"></div>
+    <p><strong><%= f.label :date_end %></strong></p>
+    <%= f.text_field :date_end, required: true %>
+  </div>
+
+  <div class="ui hidden divider"></div>
+
+  <div class="action">
+    <%= f.submit %>
+  </div>
+  <div class="ui hidden divider"></div>
+
+<% end %>
+
+<% if @trip.id? %>
+  <%= link_to 'Cancel', trip_path(@trip) %>
+<% else %>
+  <%= link_to 'Cancel', trips_path %>
+<% end %>
