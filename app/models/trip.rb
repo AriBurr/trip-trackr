@@ -22,7 +22,6 @@
 class Trip < ApplicationRecord
   belongs_to :user
   has_many :locations, dependent: :destroy
-  before_create :format_date
 
   def display_date_range
     "#{self.date_start} - #{self.date_end}"
