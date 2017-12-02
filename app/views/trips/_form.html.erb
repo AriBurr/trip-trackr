@@ -1,7 +1,7 @@
 <h1><%= @trip.id? ? 'Edit' : 'Create' %></h1>
 <div class="ui divider"></div>
 
-<%= form_for @trip, class: 'ui form' do |f| %>
+<%= form_for @trip, html: {class: "ui form"} do |f| %>
 
   <div class="field">
     <p><strong><%= f.label :name %></strong></p>

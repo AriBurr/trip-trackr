@@ -6,8 +6,8 @@
 #
 #  id         :integer          not null, primary key
 #  name       :string           not null
-#  date_start :string           not null
-#  date_end   :string           not null
+#  date_start :date             not null
+#  date_end   :date             not null
 #  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
