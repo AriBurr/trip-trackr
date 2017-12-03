@@ -15,7 +15,7 @@
         <% @locations.each do |location| %>
           <div class="card">
             <div class="image">
-              <%= image_tag 'epcot.jpg' %>
+              <%= check_if_image_is_present(location) %>
             </div>
             <div class="content">
               <div class="header">

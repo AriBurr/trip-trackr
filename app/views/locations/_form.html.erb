@@ -4,9 +4,16 @@
 
 <%= form_for @location, html: {class: "ui form"} do |f| %>
 
-  <div class="eight wide field">
+  <div class="four wide field">
     <p><strong><%= f.label :name %></strong></p>
     <%= f.text_field :name, required: true %>
+  </div>
+
+  <div class="ui hidden divider"></div>
+
+  <div class="four wide field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
   </div>
 
   <div class="ui hidden divider"></div>

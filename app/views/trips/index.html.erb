@@ -1,5 +1,6 @@
 <header id="welcome">
   <h1>Welcome back,&ensp;<%= current_user.first_name %></h1>
+  <h3> <%= DateTime.now.strftime('%A, %B %e, %Y') %> </h3>
 </header>
 
 <h2>Your trips&ensp;<%= link_to 'Add a Trip', new_trip_path, class: 'ui small teal button' %></h2>
@@ -12,7 +13,7 @@
         <% @trips.each do |trip| %>
           <div class="card">
             <div class="image">
-              <%= image_tag trip.image_file_name %>
+              <%= check_if_image_is_present(trip) %>
             </div>
             <div class="content">
               <div class="header">

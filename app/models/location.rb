@@ -2,11 +2,15 @@
 #
 # Table name: locations
 #
-#  id         :integer          not null, primary key
-#  name       :string           not null
-#  trip_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id                 :integer          not null, primary key
+#  name               :string           not null
+#  trip_id            :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 # Indexes
 #
@@ -20,4 +24,7 @@
 class Location < ApplicationRecord
   belongs_to :trip, optional: true
   has_one :address, dependent: :destroy
+  has_attached_file :image, optional: true
+  validates_attachment :image,
+                     content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 end
