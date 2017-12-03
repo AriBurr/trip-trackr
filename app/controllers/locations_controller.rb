@@ -12,6 +12,13 @@ before_action :set_location, only: [:show, :edit, :update, :destroy]
   end
 
   def create
+    @location = Location.new(location_params)
+    @trip = Trip.find(params[:trip_id])
+    if @location.save
+      redirect_to trip_path(@trip, @location)
+    else
+      render :new
+    end
   end 
 
   def edit
