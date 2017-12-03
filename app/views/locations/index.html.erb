@@ -1,2 +1,36 @@
-<h1>Locations#index</h1>
-<p>Find me in app/views/locations/index.html.erb</p>
+<div id="location-welcome">
+  <h1>Travel Destinations</h1>
+  <h2>
+    <em>Browse from our selection or <%= link_to 'Create', new_location_path, id: 'create', class: 'ui teal inverted button' %> your own.</em>
+  </h2>
+</div>
+
+<div class="ui divider hidden"></div>
+
+<div class="ui divider hidden"></div>
+
+<div class="ui grid">
+    <div class "sixteen wide computer column">
+      <div class="ui cards">
+        <% @locations.each do |location| %>
+          <div class="card">
+            <div class="image">
+              <%= image_tag 'epcot.jpg' %>
+            </div>
+            <div class="content">
+              <div class="header">
+                <%= link_to location.name, location_path(location.id), class: 'header' %>
+              </div>
+              <div class="ui divider"></div>
+              <div class="ui center aligned">
+                <p>200 Epcot Center Dr, Orlando, FL 32821</p>
+              </div>
+            </div>
+            <div class="extra content">
+              <%= link_to 'More Info', location_path(location.id), class: 'ui orange button' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
