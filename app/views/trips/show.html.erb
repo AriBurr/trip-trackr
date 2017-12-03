@@ -1,8 +1,9 @@
-<h1><%= @trip.name %></h1>
+<h1><%= @trip.name %> Destinations</h1>
 
 <%= link_to 'Back', trips_path %> |
 <%= link_to 'Edit', edit_trip_path %> |
-<%= link_to 'Remove Trip', trip_path(@trip), method: :delete, data: { confirm: 'Are you sure?'} %>
+<%= link_to 'Remove Trip', trip_path(@trip), method: :delete, data: { confirm: 'Are you sure?'} %>|
+<%= link_to 'Add New Destination', new_location_path %> |
 
 <div class="ui divider"></div>
 

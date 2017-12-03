@@ -1,2 +1,26 @@
-<h1>Locations#new</h1>
-<p>Find me in app/views/locations/new.html.erb</p>
+<h1>Add New Location</h1>
+
+<h1><%= @location.id? ? 'Edit' : 'Create' %></h1>
+<div class="ui divider"></div>
+
+<%= form_for @location, html: {class: "ui form"} do |f| %>
+
+  <div class="eight wide field">
+    <p><strong><%= f.label :name %></strong></p>
+    <%= f.text_field :name, required: true %>
+  </div>
+
+  <div class="ui hidden divider"></div>
+
+  <div class="action">
+    <%= f.submit class: 'ui teal button' %>
+  </div>
+
+
+  <div class="ui hidden divider"></div>
+
+<% end %>
+
+<%= link_to 'Cancel', trips_path(@trip), class: 'ui button red' %>
+
+
