@@ -1,3 +1,4 @@
+
 # == Schema Information
 #
 # Table name: trips
@@ -31,7 +32,7 @@ class Trip < ApplicationRecord
                      content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
   def display_date_range
-    "#{self.date_start} - #{self.date_end}"
+    "#{self.date_start.strftime("%m/%d/%Y")} - #{self.date_end.strftime("%m/%d/%Y")}"
   end
 
 end
