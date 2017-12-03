@@ -1,3 +1,5 @@
+// flash
+
 .flash {
   border-radius: 5px;
   color: white;
@@ -15,4 +17,23 @@
 
 .flash.notice {
   background-color: #C9E3AC;
+}
+
+// nav
+
+.ui.inverted.menu {
+  border-radius: 0;
+}
+
+#brand {
+  font-weight: bold;
+}
+
+// footer
+
+footer {
+  position: relative;
+  padding-top: 5%;
+  font-size: 1em;
+  color: white;
 }

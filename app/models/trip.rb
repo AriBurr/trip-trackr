@@ -31,12 +31,7 @@ class Trip < ApplicationRecord
   validates_attachment :image,
                      content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
-  def display_date_range
-    "#{self.date_start.strftime("%m/%d/%Y")} - #{self.date_end.strftime("%m/%d/%Y")}"
-  end
-
   def check_date_closeness
-    
     time_away_in_days = (self.date_start - DateTime.now).to_i
 
     if time_away_in_days > 7
@@ -46,7 +41,7 @@ class Trip < ApplicationRecord
     else
       "We hope you enjoyed your trip!"
     end
-
+    
   end
 
 end

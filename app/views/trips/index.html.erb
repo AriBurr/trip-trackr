@@ -23,7 +23,7 @@
               <p><%= trip.check_date_closeness %></p>
               <div class="ui divider"></div>
               <div class="ui center aligned">
-                <em><%= trip.display_date_range %> (<%= (trip.date_end - trip.date_start).to_i %> days)</em>
+                <em><%= display_date_range(trip) %></em>
               </div>
             </div>
             <div class="extra content">
