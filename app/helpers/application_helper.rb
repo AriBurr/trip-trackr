@@ -9,7 +9,7 @@ module ApplicationHelper
   # end
 
   def check_if_image_is_present(model_name)
-    image_tag(model_name.image.present? ? input_name.image_file_name : 'default-trip.jpg')
+    image_tag(model_name.image.present? ? model_name.image_file_name : 'default-trip.jpg')
   end
 
 end
