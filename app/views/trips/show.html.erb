@@ -1,11 +1,17 @@
-<h1><%= @trip.name %> Destinations</h1>
+<header id="welcome">
+  <h1>Your <%= @trip.name %> Trip</h1>
+</header>
 
-<%= link_to 'Back', trips_path %> |
-<%= link_to 'Edit', edit_trip_path %> |
-<%= link_to 'Remove Trip', trip_path(@trip), method: :delete, data: { confirm: 'Are you sure?'} %>|
-<%= link_to 'Add New Location', new_location_path(@trip) %> |
+<br>
 
-<div class="ui divider"></div>
+<%= link_to 'Edit', edit_trip_path, class: 'ui teal button' %>
+<%= link_to 'Remove Trip', trip_path(@trip), method: :delete, data: { confirm: 'Are you sure?'}, class: 'ui red button' %>
+
+<div class="ui raised segment">
+  <p><%= @trip.desc %></p>
+</div>
+
+<%= link_to 'Add New Location', new_location_path(@trip), class: 'ui orange button' %>
 
 <div class="ui grid">
   <div class "sixteen wide computer column">

@@ -20,6 +20,11 @@
     </div>
   </div>
 
+  <div class="eight wide field">
+    <p><strong><%= f.label :description %></strong></p>
+    <%= f.text_area :desc %>
+  </div>
+
   <div class="four wide field">
     <%= f.label :image %>
     <%= f.file_field :image %>
