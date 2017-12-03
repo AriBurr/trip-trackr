@@ -1,8 +1,8 @@
-<h1><%= @location.id? ? 'Edit Address' : 'Add New Address' %></h1>
+<h1><%= @address.id? ? 'Edit Address' : 'Add New Address' %></h1>
 
 <div class="ui divider"></div>
 
-<%= form_for @address, html: {class: "ui form"} do |f| %>
+<%= form_for [@location, @address], html: {class: "ui form"} do |f| %>
 
   <div class="four wide field">
     <p><strong><%= f.label :name %></strong></p>
@@ -12,11 +12,10 @@
     <%= f.text_field :zip, required: true %>
   </div>
 
-  
+
   <div class="action">
     <%= f.submit class: 'ui teal button' %>
   </div>
-
 
   <div class="ui hidden divider"></div>
 
