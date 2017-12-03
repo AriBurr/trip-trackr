@@ -1,0 +1,25 @@
+<h1><%= @location.id? ? 'Edit Address' : 'Add New Address' %></h1>
+
+<div class="ui divider"></div>
+
+<%= form_for @address, html: {class: "ui form"} do |f| %>
+
+  <div class="four wide field">
+    <p><strong><%= f.label :name %></strong></p>
+    <%= f.text_field :street, required: true %>
+    <%= f.text_field :city, required: true %>
+    <%= f.text_field :state, required: true %>
+    <%= f.text_field :zip, required: true %>
+  </div>
+
+  
+  <div class="action">
+    <%= f.submit class: 'ui teal button' %>
+  </div>
+
+
+  <div class="ui hidden divider"></div>
+
+<% end %>
+
+<%= link_to 'Cancel', trips_path(@trip), class: 'ui button red' %>
