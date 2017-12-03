@@ -7,7 +7,7 @@
 <%= link_to 'Edit', edit_trip_path, class: 'ui teal button' %>
 <%= link_to 'Remove Trip', trip_path(@trip), method: :delete, data: { confirm: 'Are you sure?'}, class: 'ui red button' %>
 
-<div class="ui raised segment">
+<div class="ui piled segment">
   <p><%= @trip.desc %></p>
 </div>
 

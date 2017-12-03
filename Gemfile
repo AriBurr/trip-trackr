@@ -13,6 +13,7 @@ gem 'semantic-ui-sass'
 gem 'jquery-rails'
 gem 'devise'
 gem "paperclip", '~> 4.2'
+gem 'gmaps4rails'
 
 group :development, :test do
   gem 'pry'
