@@ -18,12 +18,12 @@
             <div class="content">
               <div class="header">
                 <%= link_to trip.name, trip_path(trip.id), class: 'header' %>
+                <br>
               </div>
+              <p><%= trip.check_date_closeness %></p>
               <div class="ui divider"></div>
               <div class="ui center aligned">
-                  <em><%= trip.display_date_range %></em>
-                  <div class="ui divider hidden"></div>
-                  <em><%= (trip.date_end - trip.date_start).to_i %> days</em>
+                <em><%= trip.display_date_range %> (<%= (trip.date_end - trip.date_start).to_i %> days)</em>
               </div>
             </div>
             <div class="extra content">

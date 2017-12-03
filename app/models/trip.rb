@@ -35,4 +35,18 @@ class Trip < ApplicationRecord
     "#{self.date_start.strftime("%m/%d/%Y")} - #{self.date_end.strftime("%m/%d/%Y")}"
   end
 
+  def check_date_closeness
+    
+    time_away_in_days = (self.date_start - DateTime.now).to_i
+
+    if time_away_in_days > 7
+      "#{time_away_in_days} days until your trip!"
+    elsif time_away_in_days > 0 && time_away_in_days <= 7
+      "#{time_away_in_days} days until your trip! Better start packing!"
+    else
+      "We hope you enjoyed your trip!"
+    end
+
+  end
+
 end
