@@ -12,7 +12,7 @@
         <% @trips.each do |trip| %>
           <div class="card">
             <div class="image">
-              <%= image_tag "default-trip.jpg"%>
+              <%= image_tag trip.image_file_name %>
             </div>
             <div class="content">
               <div class="header">

@@ -12,6 +12,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'semantic-ui-sass'
 gem 'jquery-rails'
 gem 'devise'
+gem "paperclip", '~> 4.2'
 
 group :development, :test do
   gem 'pry'
