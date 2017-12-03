@@ -1,0 +1,18 @@
+.flash {
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 1%;
+  width: 50%;
+  text-align: center;
+}
+
+.flash.alert {
+  background-color: #F99581;
+}
+
+.flash.notice {
+  background-color: #C9E3AC;
+}

@@ -9,8 +9,19 @@
   <body>
 
     <%= render 'shared/nav' %>
+
+    <% flash.each do |type, message| %>
+      <div class='flash <%= type %>'>
+        <%= message %>
+      </div>
+    <% end %>
+
+    <br>
+
     <div class='ui container'>
+
       <%= yield %>
+
     </div>
 
   </body>
