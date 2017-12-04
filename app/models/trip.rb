@@ -41,7 +41,7 @@ class Trip < ApplicationRecord
     else
       "We hope you enjoyed your trip!"
     end
-    
+
   end
 
 end

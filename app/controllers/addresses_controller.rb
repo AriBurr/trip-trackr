@@ -1,9 +1,11 @@
 class AddressesController < ApplicationController
-  before_action :set_address, only: [:show, :edit, :update, :destroy]
+  before_action :find_location
+
   def index
   end
 
   def show
+    locations = Address.all
   end
 
   def new
@@ -21,10 +23,6 @@ class AddressesController < ApplicationController
 
   def edit
   end
-
-  def update
-
-  end 
 
   def destroy
   end

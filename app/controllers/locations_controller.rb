@@ -6,7 +6,10 @@ before_action :set_location, only: [:show, :edit, :update, :destroy]
   end
 
   def show
-   
+    @hash = Gmaps4rails.build_markers(@location.address) do |address, marker|
+      marker.lat address.latitude
+      marker.lng address.longitude
+    end
   end
 
   def new

@@ -14,6 +14,8 @@ gem 'jquery-rails'
 gem 'devise'
 gem "paperclip", '~> 4.2'
 gem 'gmaps4rails'
+gem 'geocoder'
+gem 'coffee-script', '~> 2.4', '>= 2.4.1'
 
 group :development, :test do
   gem 'pry'

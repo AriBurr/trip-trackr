@@ -12,4 +12,8 @@ module ApplicationHelper
     end
   end
 
+  def display_full_address(location)
+    "#{location.address.street}, #{location.address.city}, #{location.address.state}, #{location.address.zip}"
+  end
+
 end
