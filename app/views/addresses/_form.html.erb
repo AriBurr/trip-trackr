@@ -4,15 +4,24 @@
 
 <%= form_for [@location, @address], html: {class: "ui form"} do |f| %>
 
-  <div class="four wide field">
-    <p><strong><%= f.label :name %></strong></p>
+  <div class="eight wide field">
+    <%= f.label :street %>
     <%= f.text_field :street, required: true %>
-    <%= f.text_field :city, required: true %>
-    <%= f.text_field :state, required: true %>
+  </div>
+  <div class="fields">
+    <div class="four wide field">
+      <%= f.label :city %>
+      <%= f.text_field :city, required: true %>
+    </div>
+    <div class="four wide field">
+      <%= f.label :state %>
+      <%= f.text_field :state, required: true %>
+    </div>
+  </div>
+  <div class="four wide field">
+    <%= f.label :zip %>
     <%= f.text_field :zip, required: true %>
   </div>
-
-
   <div class="action">
     <%= f.submit class: 'ui teal button' %>
   </div>
@@ -21,4 +30,8 @@
 
 <% end %>
 
-<%= link_to 'Cancel', trips_path(@trip), class: 'ui button red' %>
+<% if @address.id? %>
+  <%= link_to 'Cancel', location_path(@address), class: 'ui red basic button' %>
+<% else %>
+  <%= link_to 'Cancel', locations_path, class: 'ui red basic button' %>
+<% end %>

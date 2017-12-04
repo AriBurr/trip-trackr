@@ -12,7 +12,7 @@ class AddressesController < ApplicationController
   end
 
   def create
-    @address = @location.addresses.new(address_params)
+    @address = @location.build_address(address_params)
     if @address.save
       redirect_to location_path(@location)
     else
@@ -33,7 +33,7 @@ class AddressesController < ApplicationController
   end
 
   def address_params
-    params.require(:address).permit(:street, :city, :state, :zip)
+    params.require(:address).permit(:street, :city, :state, :zip, :longitude, :latitude)
   end
 
 end
