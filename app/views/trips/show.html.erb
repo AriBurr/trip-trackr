@@ -27,7 +27,9 @@
               <div class="ui center aligned">
                 <strong><%= location.name %></strong>
                 <br>
-                <em><%= display_full_address(location) %></em>
+                <% unless location.address == nil %>
+                  <em><%= display_full_address(location) %></em>
+                <% end %>
               </div>
             </div>
             <div class="extra content">
