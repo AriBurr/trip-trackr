@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-  before_action :find_location
+  before_action :set_location
 
   def index
   end
@@ -24,12 +24,20 @@ class AddressesController < ApplicationController
   def edit
   end
 
+  def update
+    if address.update(address_params)
+      redirect_to location_path(@location)
+    else
+      render :edit
+    end
+  end
+
   def destroy
   end
 
 
   private
-  def find_location
+  def set_location
     @location = Location.find(params[:location_id])
   end
 

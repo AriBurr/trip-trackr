@@ -1,0 +1,18 @@
+<div class="ui grid">
+  <div class "sixteen wide computer column">
+    <div class="ui cards">
+      <% @locations.each do |location| %>
+        <div class="card">
+          <div class="content">
+            <div class="ui center aligned">
+              <p><%= location.name %></p>
+            </div>
+          </div>
+          <div class="extra content">
+            <%= link_to 'Add to Trip', add_location_path(@trip, location), method: :patch, class: 'ui green button' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

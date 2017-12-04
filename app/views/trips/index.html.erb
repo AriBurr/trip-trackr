@@ -17,7 +17,7 @@
             </div>
             <div class="content">
               <div class="header">
-                <%= link_to trip.name, trip_path(trip.id), class: 'header' %>
+                <%= link_to trip.name, trip_path(trip.id), class: 'header', data: { turbolinks: false } %>
                 <br>
               </div>
               <p><%= trip.check_date_closeness %></p>
@@ -27,7 +27,7 @@
               </div>
             </div>
             <div class="extra content">
-              <%= link_to 'Preview', trip_path(trip.id), class: 'ui orange button' %>
+              <%= link_to 'Preview', trip_path(trip.id), class: 'ui orange button', data: { turbolinks: false } %>
             </div>
           </div>
         <% end %>

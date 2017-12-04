@@ -6,26 +6,43 @@
 
 <%= link_to 'Edit', edit_trip_path, class: 'ui teal button' %>
 <%= link_to 'Remove Trip', trip_path(@trip), method: :delete, data: { confirm: 'Are you sure?'}, class: 'ui red button' %>
+<%= link_to 'Add New Location', find_location_path, class: 'ui orange button' %>
 
 <div class="ui piled segment">
   <p><%= @trip.desc %></p>
 </div>
 
-<%= link_to 'Add New Location', '#', class: 'ui orange button' %>
+<div class="ui divider hidden"></div>
 
 <div class="ui grid">
-  <div class "sixteen wide computer column">
+  <div class "eight wide computer column">
     <div class="ui cards">
-      <% @trip.locations.each do |location| %>
-        <div class="card">
-          <div class="content">
-            Location:
+      <% if @trip.locations.any? %>
+        <% @trip.locations.each do |location| %>
+          <div class="card">
+            <div class="image">
+              <%= check_if_image_is_present(location) %>
+            </div>
+            <div class="content">
+              <div class="ui center aligned">
+                <strong><%= location.name %></strong>
+                <br>
+                <em><%= display_full_address(location) %></em>
+              </div>
+            </div>
+            <div class="extra content">
+              <%= link_to 'Remove Location', remove_location_path(@trip, location), method: :patch, class: 'ui red button' %>
+            </div>
           </div>
-          <div class="extra content">
-            <%= link_to 'Remove from Trip', "#", method: :patch %>
-          </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
+  <div class="eight wide computer column">
+    <div style='width: 500px;'>
+      <div id="map" style='width: 500px; height: 250px;'></div>
+    </div>
+  </div>
 </div>
+
+<%= render 'shared/map' %>

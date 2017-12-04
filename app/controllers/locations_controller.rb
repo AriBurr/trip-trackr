@@ -29,9 +29,16 @@ before_action :set_location, only: [:show, :edit, :update, :destroy]
   end
 
   def update
+    if @location.update(location_params)
+      redirect_to location_path(@location)
+    else
+      render :new
+    end
   end
 
   def destroy
+    @location.destroy
+    redirect_to locations_path
   end
 
   private
@@ -41,7 +48,7 @@ before_action :set_location, only: [:show, :edit, :update, :destroy]
   end
 
   def location_params
-    params.require(:location).permit(:name)
+    params.require(:location).permit(:name, :image)
   end
 
 end

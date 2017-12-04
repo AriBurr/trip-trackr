@@ -27,4 +27,9 @@ class Location < ApplicationRecord
   has_attached_file :image, optional: true
   validates_attachment :image,
                      content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
+
+ def self.find_location_not_on_trip
+   Location.where('trip_id IS ?', nil)
+ end
+
 end

@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_trip, only: [:show, :edit, :update, :destroy]
+  before_action :set_trip, only: [:show, :edit, :update, :destroy, :find_location, :add_location, :remove_location]
 
   def index
     @trips = current_user.trips
@@ -36,6 +36,23 @@ class TripsController < ApplicationController
   def destroy
     @trip.destroy
     redirect_to trips_path
+  end
+
+
+  def find_location
+    @locations = Location.find_location_not_on_trip
+  end
+
+  def add_location
+    @location = Location.find(params[:format])
+    @location.update(trip_id: params[:id])
+    redirect_to trip_path(@trip)
+  end
+
+  def remove_location
+    @location = Location.find(params[:trip_id])
+    @location.update(trip_id: nil)
+    redirect_to trip_path(@trip)
   end
 
   private

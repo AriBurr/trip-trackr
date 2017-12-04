@@ -31,7 +31,7 @@
 <% end %>
 
 <% if @address.id? %>
-  <%= link_to 'Cancel', location_path(@address), class: 'ui red basic button' %>
+  <%= link_to 'Cancel', location_path(@address), class: 'ui red button' %>
 <% else %>
-  <%= link_to 'Cancel', locations_path, class: 'ui red basic button' %>
+  <%= link_to 'Cancel', locations_path, class: 'ui red button' %>
 <% end %>
