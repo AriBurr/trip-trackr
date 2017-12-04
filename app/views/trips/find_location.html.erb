@@ -3,9 +3,12 @@
     <div class="ui cards">
       <% @locations.each do |location| %>
         <div class="card">
+          <div class="image">
+            <%= check_if_image_is_present(location) %>
+          </div>
           <div class="content">
             <div class="ui center aligned">
-              <p><%= location.name %></p>
+              <p><strong><%= location.name %></strong></p>
             </div>
           </div>
           <div class="extra content">
