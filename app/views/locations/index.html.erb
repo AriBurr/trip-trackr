@@ -19,7 +19,7 @@
             </div>
             <div class="content">
               <div class="header">
-                <%= link_to location.name, location_path(location.id), class: 'header' %>
+                <%= link_to location.name, location_path(location.id), class: 'header', data: { turbolinks: false } %>
               </div>
               <div class="ui divider"></div>
               <% if location.address %>
@@ -31,7 +31,7 @@
               <% end %>
             </div>
             <div class="extra content">
-              <%= link_to 'More Info', location_path(location.id), class: 'ui orange button' %>
+              <%= link_to 'More Info', location_path(location.id), class: 'ui orange button', data: { turbolinks: false } %>
             </div>
           </div>
         <% end %>
